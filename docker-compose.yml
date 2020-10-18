@@ -1,8 +1,9 @@
+# docker-compose -f .\docker-compose.yml up --build --detach
 version: '3.8'
 services:
   hello-world-nodejs:
     build:
-      context: ./hello-world-nodejs
+      context: ./node_src
     ports:
       - 8080:8080
     # volumes: 
@@ -10,7 +11,7 @@ services:
     # command: npm run debug
 
 #   mongo:
-#     image: mongo:4.2.8
+#     image: mongo
 #     ports:
 #       - 27017:27017
 #     volumes: 
