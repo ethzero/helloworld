@@ -1,9 +1,10 @@
 # docker-compose -f .\docker-compose.yml up --build --detach
-version: '3.7'
+version: '2'
 services:
   hello-world-nodejs:
-    build:
-      context: ./node_src
+    image: ethzero/helloworld
+    # build:
+    #   context: ./node_src
     ports:
       - 8080:8080
     networks: 
