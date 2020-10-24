@@ -10,10 +10,6 @@ services:
       hello_world_network:
         ipv4_address: 172.25.0.2
 
-    # volumes: 
-    #   - ./:/hello-world-volume
-    # command: npm run debug
-  
   hello-world-redis:
     container_name: hello-world-redis
     image: redis
@@ -22,7 +18,6 @@ services:
     networks: 
       hello_world_network:
         ipv4_address: 172.25.0.3
-
 
   redis-commander:
     image: rediscommander/redis-commander
@@ -33,20 +28,7 @@ services:
     networks: 
       hello_world_network:
         ipv4_address: 172.25.0.4
-  
 
-#   mongo:
-#     image: mongo
-#     ports:
-#       - 27017:27017
-#     volumes: 
-#       - mongodb:/data/db
-#       - mongodb_config:/data/configdb
-
-# volumes: 
-#   mongodb:
-#   mongodb_config:
-      
 networks:
   hello_world_network:
     ipam:
