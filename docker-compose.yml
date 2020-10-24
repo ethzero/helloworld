@@ -6,9 +6,34 @@ services:
       context: ./node_src
     ports:
       - 8080:8080
+    networks: 
+      hello_world_network:
+        ipv4_address: 172.25.0.2
+
     # volumes: 
     #   - ./:/hello-world-volume
     # command: npm run debug
+  
+  hello-world-redis:
+    container_name: hello-world-redis
+    image: redis
+    ports:
+      - 6379:6379
+    networks: 
+      hello_world_network:
+        ipv4_address: 172.25.0.3
+
+
+  redis-commander:
+    image: rediscommander/redis-commander
+    ports: 
+      - 8081:8081
+    environment: 
+      - REDIS_HOSTS=172.25.0.3
+    networks: 
+      hello_world_network:
+        ipv4_address: 172.25.0.4
+  
 
 #   mongo:
 #     image: mongo
@@ -22,3 +47,9 @@ services:
 #   mongodb:
 #   mongodb_config:
       
+networks:
+  hello_world_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.0.0/24
