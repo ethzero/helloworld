@@ -1,5 +1,5 @@
 # docker-compose -f .\docker-compose.yml up --build --detach
-version: '3.8'
+version: '3.7'
 services:
   hello-world-nodejs:
     build:
