@@ -2,7 +2,7 @@
 version: '2'
 services:
   hello-world-nodejs:
-    image: ethzero/helloworld
+    image: ethzero/helloworld:latest
     # build:
     #   context: ./node_src
     ports:
