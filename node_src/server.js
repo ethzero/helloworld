@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
     'req.query': req.query,
     'req.headers': req.headers
   }
-  res.send(`<h1>Hello World!</h1><pre style="white-space: pre-wrap;">` + util.inspect($httpTransaction) + `</pre>`);
+  res.send(`<h1>Hello World!</h1><pre style="white-space: pre-wrap;font-family: Cascadia Code;font-size: small;background-color: black;color: lightgray;">` + util.inspect($httpTransaction) + `</pre>`);
   console.log($httpTransaction);
   client.set(new Date().toISOString(), JSON.stringify($httpTransaction), redis.print);
 });
