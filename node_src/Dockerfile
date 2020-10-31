@@ -1,4 +1,5 @@
-FROM node:12
+ARG ARCH=
+FROM ${ARCH}node:12
 
 # Create app directory
 WORKDIR /usr/src/app
